@@ -1,6 +1,4 @@
 # rasa_ros
-![ROS2](https://img.shields.io/badge/ros2-humble-blue?logo=ros&logoColor=white)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Overview
 This package is a ROS2 wrapper for the natural language understanding (NLU) [Rasa Open Source](https://rasa.com/docs/rasa/) framework. It provides an interface to interact with a Rasa NLU model using ROS2 actions.
