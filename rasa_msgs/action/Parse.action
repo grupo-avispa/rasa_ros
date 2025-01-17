@@ -1,0 +1,15 @@
+#goal definition
+
+string  text  # Message to be parsed
+string  message_id  # Optional ID for message to be parsed
+
+---
+#result definition
+Entity[] entities  # Parsed entities
+Intent intent  # Intent of the text
+Intent[] intent_ranking  # Ranking of intents
+string text  # Text of the message
+
+---
+#feedback definition
+
