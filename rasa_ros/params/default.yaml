@@ -1,0 +1,4 @@
+rasa:
+  ros__parameters:
+    ip_address: "localhost"
+    port: 5005
