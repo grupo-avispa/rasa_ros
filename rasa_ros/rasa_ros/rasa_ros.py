@@ -27,7 +27,8 @@ import requests
 
 
 class Rasa(Node):
-    """Rasa node.
+    """
+    Rasa node.
 
     This node is responsible for the interaction with the Rasa Open Source server.
 
@@ -42,11 +43,11 @@ class Rasa(Node):
         Port of the Rasa Open Source server
 
     Actions
-    ----------
+    -------
     parse(rasa_msgs/Parse): Parse the text using Rasa Open Source
 
     Methods
-    ----------
+    -------
     __init__(self)
         Constructor
     get_params(self)
@@ -55,6 +56,7 @@ class Rasa(Node):
         Callback for the parse action
     predict_intent(self, text, message_id)
         Get the intent from the Rasa Open Source server
+
     """
 
     def __init__(self):
@@ -78,12 +80,14 @@ class Rasa(Node):
         self.get_logger().info(f'The parameter port is set to: [{self.port}]')
 
     def parse_callback(self, goal_handle) -> Parse.Result:
-        """Parse callback.
+        """
+        Parse callback.
 
         Parameters
         ----------
         goal_handle: rclpy.action.server.GoalHandle
             Goal handle of the parse action
+
         """
         goal = goal_handle.request
         self.get_logger().info(f'Executing goal: [{goal.text}]')
@@ -97,7 +101,8 @@ class Rasa(Node):
         return result
 
     def predict_intent(self, text: str, message_id: str) -> tuple[bool, Parse.Result]:
-        """Predicts the intent and entities of the message.
+        """
+        Predicts the intent and entities of the message.
 
         Parameters
         ----------
@@ -112,6 +117,7 @@ class Rasa(Node):
             If the request was successful
         parse: rasa_msgs.msg.Parse.Result
             Parse result
+
         """
         # Initialize the success flag and parse
         success = False
