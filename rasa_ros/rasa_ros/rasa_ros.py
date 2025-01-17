@@ -16,21 +16,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# import math
-# import time
-# import numpy as np
-# import os.path
-
-
-# import face_recognition
-
-import requests
-
-import rclpy
-from rclpy.node import Node
-from rclpy.action import ActionServer
 from rasa_msgs.action import Parse
 from rasa_msgs.msg import Entity, Intent
+
+import rclpy
+from rclpy.action import ActionServer
+from rclpy.node import Node
+
+import requests
 
 
 class Rasa(Node):
@@ -74,10 +67,7 @@ class Rasa(Node):
         self.action_server = ActionServer(self, Parse, 'parse', self.parse_callback)
 
     def get_params(self):
-        """
-        Get parameters from the parameter server.
-        """
-
+        """Get parameters from the parameter server."""
         # Declare and acquire parameters
         self.declare_parameter('ip_address', 'localhost')
         self.ip_address = self.get_parameter('ip_address').get_parameter_value().string_value
@@ -88,15 +78,13 @@ class Rasa(Node):
         self.get_logger().info(f'The parameter port is set to: [{self.port}]')
 
     def parse_callback(self, goal_handle) -> Parse.Result:
-        """
-        Callback for the parse action.
+        """Parse callback.
 
         Parameters
         ----------
         goal_handle: rclpy.action.server.GoalHandle
             Goal handle of the parse action
         """
-
         goal = goal_handle.request
         self.get_logger().info(f'Executing goal: [{goal.text}]')
         [success, result] = self.predict_intent(goal.text, goal.message_id)
@@ -109,8 +97,7 @@ class Rasa(Node):
         return result
 
     def predict_intent(self, text: str, message_id: str) -> tuple[bool, Parse.Result]:
-        """
-        Predicts the intent and entities of the message.
+        """Predicts the intent and entities of the message.
 
         Parameters
         ----------
@@ -126,7 +113,6 @@ class Rasa(Node):
         parse: rasa_msgs.msg.Parse.Result
             Parse result
         """
-
         # Initialize the success flag and parse
         success = False
         parse = Parse.Result()
