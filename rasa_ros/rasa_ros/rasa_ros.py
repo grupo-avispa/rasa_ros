@@ -132,10 +132,7 @@ class Rasa(Node):
         parse = Parse.Result()
 
         # Create the JSON payload
-        payload = {
-            'text': text,
-            'message_id': message_id
-        }
+        payload = {'text': text, 'message_id': message_id}
 
         # Send a POST request to the Rasa Open Source server
         try:
