@@ -66,7 +66,7 @@ class Rasa(Node):
         self.get_params()
 
         # Create the action server
-        self.action_server = ActionServer(self, Parse, self.name() + '/parse', self.parse_callback)
+        self.action_server = ActionServer(self, Parse, self.get_name() + '/parse', self.parse_callback)
 
     def get_params(self):
         """Get parameters from the parameter server."""
