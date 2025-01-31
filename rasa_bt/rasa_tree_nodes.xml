@@ -1,0 +1,13 @@
+<root>
+    <TreeNodesModel>
+        <!-- ############################### ACTION NODES ################################# -->
+        <Action ID="Parse">
+            <input_port name="text">Text to parse</input_port>
+            <input_port name="message_id">Optional ID for message</input_port>
+            <output_port name="entities">Parsed entities</output_port>
+            <output_port name="intent">Intent of the text</output_port>
+            <output_port name="intent_ranking">Ranking of intents</output_port>
+        </Action>
+    </TreeNodesModel>
+</root>
+
