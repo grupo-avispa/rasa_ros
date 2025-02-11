@@ -5,7 +5,7 @@ name: Build
 
 on:
   push:
-    branches: [main, jazzy, humble]
+    branches: [main, jazzy]
   pull_request:
 
 env:
@@ -13,7 +13,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4.2.2
@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         uses: ros-tooling/action-ros-ci@0.3.15
         with:
-          package-name: 
+          package-name:
             rasa_bt
             rasa_msgs
             rasa_ros
