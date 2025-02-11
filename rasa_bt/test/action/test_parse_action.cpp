@@ -131,7 +131,7 @@ TEST_F(ParseActionTestFixture, test_ports)
 {
   std::string xml_txt =
     R"(
-      <root main_tree_to_execute = "MainTree" >
+      <root BTCPP_format="4">
         <BehaviorTree ID="MainTree">
             <Parse/>
         </BehaviorTree>
@@ -141,7 +141,7 @@ TEST_F(ParseActionTestFixture, test_ports)
 
   xml_txt =
     R"(
-      <root main_tree_to_execute = "MainTree" >
+      <root BTCPP_format="4">
         <BehaviorTree ID="MainTree">
             <Parse text="" message_id="" />
         </BehaviorTree>
@@ -153,7 +153,7 @@ TEST_F(ParseActionTestFixture, test_ports)
 
   xml_txt =
     R"(
-      <root main_tree_to_execute = "MainTree" >
+      <root BTCPP_format="4">
         <BehaviorTree ID="MainTree">
             <Parse text="This is a test" message_id="This is also a test" />
         </BehaviorTree>
