@@ -168,7 +168,7 @@ TEST_F(ParseActionTestFixture, test_tick)
 {
   std::string xml_txt =
     R"(
-      <root>
+      <root BTCPP_format="4">
         <BehaviorTree ID="MainTree">
             <Parse text="This is a test" entities="{entities}" intent="{intent}" intent_ranking="{intent_ranking}"/>
         </BehaviorTree>
