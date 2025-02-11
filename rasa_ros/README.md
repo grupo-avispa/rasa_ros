@@ -8,7 +8,7 @@ This package is a ROS2 wrapper for the natural language understanding (NLU) [Ras
 
 #### Dependencies
 
-- [Robot Operating System (ROS) 2](https://docs.ros.org/en/humble/) (middleware for robotics),
+- [Robot Operating System (ROS) 2](https://docs.ros.org/en/jazzy/) (middleware for robotics),
 
 
 #### Building
@@ -18,7 +18,7 @@ To build from source, clone the latest version from the main repository into you
 cd colcon_workspace/src
 git clone https://github.com/grupo-avispa/rasa_ros.git -b main
 cd colcon_workspace
-rosdep install -i --from-path src --rosdistro humble -y
+rosdep install -i --from-path src --rosdistro jazzy -y
 colcon build --symlink-install
 ```
 
@@ -60,6 +60,4 @@ This node has an action server that receives a string with a message and returns
 
 	Port of the Rasa server.
 
-[Ubuntu]: https://ubuntu.com/
-[ROS2]: https://docs.ros.org/en/humble/
 

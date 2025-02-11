@@ -18,8 +18,8 @@
 #include <set>
 #include <string>
 
-#include <ament_index_cpp/get_package_share_directory.hpp>
-#include "behaviortree_cpp_v3/bt_factory.h"
+#include "ament_index_cpp/get_package_share_directory.hpp"
+#include "behaviortree_cpp/bt_factory.h"
 
 #include "nav2_behavior_tree/utils/test_action_server.hpp"
 #include "rasa_bt/action/parse_action.hpp"

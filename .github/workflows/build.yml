@@ -5,7 +5,7 @@ name: Build
 
 on:
   push:
-    branches: [main, humble]
+    branches: [main, jazzy, humble]
   pull_request:
 
 env:
@@ -26,7 +26,7 @@ jobs:
             rasa_bt
             rasa_msgs
             rasa_ros
-          target-ros2-distro: humble
+          target-ros2-distro: jazzy
           colcon-defaults: |
             {
               "build": {
