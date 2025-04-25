@@ -1,0 +1,32 @@
+name: Rasa
+services:
+  rasa_intent:
+    image: rasa/rasa:3.6.21-full
+    ports:
+      - 5005:5005
+    volumes:
+      - ${RASA_INTENT_PATH}:/app
+    command:
+      - run
+      - --enable-api
+    restart: unless-stopped
+  rasa_role:
+    image: rasa/rasa:3.6.21-full
+    ports:
+      - 5006:5005
+    volumes:
+      - ${RASA_ROLE_PATH}:/app
+    command:
+      - run
+      - --enable-api
+    restart: unless-stopped
+  rasa_tasks:
+    image: rasa/rasa:3.6.21-full
+    ports:
+      - 5007:5005
+    volumes:
+      - ${RASA_TASKS_PATH}:/app
+    command:
+      - run
+      - --enable-api
+    restart: unless-stopped
