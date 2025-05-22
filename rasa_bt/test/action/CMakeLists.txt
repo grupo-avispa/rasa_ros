@@ -6,6 +6,3 @@ target_link_libraries(test_parse_action
   ament_index_cpp::ament_index_cpp
   rasa_parse_action_bt_node
 )
-ament_target_dependencies(test_parse_action
-  ${dependencies}
-)

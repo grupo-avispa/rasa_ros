@@ -70,12 +70,12 @@ foreach(bt_plugin ${plugin_libs})
   )
   target_link_libraries(${bt_plugin} PUBLIC
     behaviortree_cpp::behaviortree_cpp
+    nav2_behavior_tree::nav2_behavior_tree
     rclcpp::rclcpp
     rclcpp_action::rclcpp_action
     rclcpp_lifecycle::rclcpp_lifecycle
     ${rasa_msgs_TARGETS}
   )
-  ament_target_dependencies(${bt_plugin} PUBLIC nav2_behavior_tree) # TODO(ajtudela): Fix this in kilted
   target_compile_definitions(${bt_plugin} PRIVATE BT_PLUGIN_EXPORT)
 endforeach()
 
